@@ -85,10 +85,21 @@ gulp.task('serve', function(done){
 });
 
 
+// Watch for changes
+
+gulp.task('watch', function(done){
+  // Watch HTML pages
+  gulp.watch('src/**/*.html', gulp.series('nunjucks', 'css', reload));
+  // Watch CSS files
+  gulp.watch('src/css/**/*.css', gulp.series('css'));
+  done();
+});
+
+
 // Series
 
 // Default task
-gulp.task('default', gulp.series('clean', 'css', 'nunjucks', 'serve'));
+gulp.task('default', gulp.series('clean', 'css', 'nunjucks', 'serve', 'watch'));
 
 // Deployment task
 gulp.task('build', gulp.series('clean', 'css'));
