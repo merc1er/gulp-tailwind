@@ -10,6 +10,9 @@ const gulp         = require('gulp'),
       postcss      = require('gulp-postcss'),
       tailwindcss  = require('tailwindcss'),
       autoprefixer = require('autoprefixer'),
+      // JavaScript
+      concat       = require('gulp-concat'),
+      terser       = require('gulp-terser'),
       // BrowserSync
       browserSync  = require('browser-sync'),
       reload       = browserSync.reload;
@@ -85,6 +88,19 @@ gulp.task('css-dev', function() {
 });
 
 
+// JavaScript
+
+// Concat and minify JavaScript
+gulp.task('js', function() {
+  const files = ['src/js/*.js'];
+  return gulp.src(files)
+    .pipe(concat('scripts.js'))
+    // Minify JS
+    .pipe(terser())
+    .pipe(gulp.dest('dist/static/js/'));
+});
+
+
 // Start browserSync
 
 gulp.task('serve', function(done){
@@ -108,6 +124,8 @@ gulp.task('watch', function(done){
   gulp.watch('src/**/*.html', gulp.series('nunjucks', 'reload'));
   // Watch CSS files
   gulp.watch('src/css/**/*.css', gulp.series('css-prod'));
+  // Watch JS files
+  gulp.watch('src/js/*.js', gulp.series('js', 'reload'));
   done();
 });
 
@@ -115,8 +133,8 @@ gulp.task('watch', function(done){
 // Series
 
 // Default task
-gulp.task('default', gulp.series('clean', 'css-dev', 'nunjucks', 'serve',
+gulp.task('default', gulp.series('clean', 'css-dev', 'nunjucks', 'js', 'serve',
   'watch'));
 
 // Deployment task
-gulp.task('build', gulp.series('clean', 'css-prod'));
+gulp.task('build', gulp.series('clean', 'css-prod', 'nunjucks', 'js'));
