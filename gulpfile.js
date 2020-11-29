@@ -101,6 +101,14 @@ gulp.task('js', function() {
 });
 
 
+// Copy all static files
+
+gulp.task('copy-static', function(done){
+  gulp.src('src/static/**/*').pipe(gulp.dest('dist/static/'));
+  done();
+});
+
+
 // Start browserSync
 
 gulp.task('serve', function(done){
@@ -133,8 +141,9 @@ gulp.task('watch', function(done){
 // Series
 
 // Default task
-gulp.task('default', gulp.series('clean', 'css-dev', 'nunjucks', 'js', 'serve',
-  'watch'));
+gulp.task('default', gulp.series('clean', 'css-dev', 'nunjucks', 'js',
+  'copy-static', 'serve', 'watch'));
 
 // Deployment task
-gulp.task('build', gulp.series('clean', 'css-prod', 'nunjucks', 'js'));
+gulp.task('build', gulp.series('clean', 'css-prod', 'nunjucks', 'js',
+  'copy-static'));

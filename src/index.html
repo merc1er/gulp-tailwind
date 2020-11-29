@@ -4,7 +4,50 @@
   <title>Tailwindcss</title>
   <link rel="stylesheet" type="text/css" href="/static/css/style.css">
 </head>
-<body>
+<body class="bg-gray-800 text-white">
+
+  <div class="relative overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+
+      <!-- Navbar -->
+      <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
+        <nav class="relative flex items-center justify-between sm:h-10" aria-label="Global">
+          <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
+            <div class="flex items-center justify-between w-full md:w-auto">
+              <a href="#">
+                <span class="sr-only">Workflow</span>
+                <img class="h-8 w-auto sm:h-10" src="/static/img/logo.png" alt="Logo">
+              </a>
+              <div class="-mr-2 flex items-center md:hidden">
+                <button type="button" class="bg-gray-700 rounded-md p-2 inline-flex items-center justify-center text-white hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" id="main-menu" aria-haspopup="true">
+                  <span class="sr-only">Open main menu</span>
+                  <!-- Heroicon name: menu -->
+                  <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
+            <a href="#" class="font-medium hover:text-gray-300">Product</a>
+            <a href="#" class="font-medium hover:text-gray-300">Features</a>
+            <a href="#" class="font-medium hover:text-gray-300">Marketplace</a>
+            <a href="#" class="font-medium hover:text-gray-300">Company</a>
+            <a href="#" class="font-medium text-gray-900 hover:text-gray-1000 bg-yellow-300 hover:bg-yellow-500 rounded-md p-2">Try it</a>
+          </div>
+        </nav>
+      </div>
+      <!-- /Navbar -->
+
+      <section class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28 grid">
+        <h1 class="text-5xl place-self-center">
+          <img class="h-14 md:h-24" src="/static/img/logo.png" alt="Logo">
+        </h1>
+      </section>
+
+    </div>
+  </div>
 
   <script src="/static/js/scripts.js"></script>
 </body>
