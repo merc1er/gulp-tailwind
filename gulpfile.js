@@ -26,6 +26,14 @@ gulp.task('clean', function(done) {
 });
 
 
+// Reload the browser
+
+gulp.task('reload', function(done){
+  reload();
+  done();
+});
+
+
 // Nunjucks
 
 gulp.task('nunjucks', function() {
@@ -97,7 +105,7 @@ gulp.task('serve', function(done){
 
 gulp.task('watch', function(done){
   // Watch HTML pages
-  gulp.watch('src/**/*.html', gulp.series('nunjucks', reload));
+  gulp.watch('src/**/*.html', gulp.series('nunjucks', 'reload'));
   // Watch CSS files
   gulp.watch('src/css/**/*.css', gulp.series('css-prod'));
   done();
