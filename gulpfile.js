@@ -129,11 +129,13 @@ gulp.task('serve', function(done){
 
 gulp.task('watch', function(done){
   // Watch HTML pages
-  gulp.watch('src/**/*.html', gulp.series('nunjucks', 'reload'));
+  gulp.watch('src/**/*', gulp.series('nunjucks', 'reload'));
   // Watch CSS files
   gulp.watch('src/css/**/*.css', gulp.series('css-prod'));
   // Watch JS files
   gulp.watch('src/js/*.js', gulp.series('js', 'reload'));
+  // Watch static files
+  gulp.watch('src/static/**/*.*', gulp.series('copy-static', 'reload'));
   done();
 });
 

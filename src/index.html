@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tailwindcss</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta name="author" content="Corentin Mercier">
+  <meta name="description" content="">
+
+  <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+
+  <title>Bitcoin Cash tipping bot</title>
 </head>
+
 <body class="bg-gray-800 text-white">
 
   <div class="relative overflow-hidden">
@@ -14,41 +24,61 @@
         <nav class="relative flex items-center justify-between sm:h-10" aria-label="Global">
           <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
             <div class="flex items-center justify-between w-full md:w-auto">
-              <a href="#">
+              <a href="/">
                 <span class="sr-only">Workflow</span>
-                <img class="h-8 w-auto sm:h-10" src="/static/img/logo.png" alt="Logo">
+                <img class="h-8 w-auto sm:h-10" src="/static/img/tippie.png" alt="Tippie">
               </a>
               <div class="-mr-2 flex items-center md:hidden">
                 <button type="button" class="bg-gray-700 rounded-md p-2 inline-flex items-center justify-center text-white hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" id="main-menu" aria-haspopup="true">
                   <span class="sr-only">Open main menu</span>
-                  <!-- Heroicon name: menu -->
-                  <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
+                  {% include "icons/menu.svg" %}
                 </button>
               </div>
             </div>
           </div>
           <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
-            <a href="#" class="font-medium hover:text-gray-300">Product</a>
-            <a href="#" class="font-medium hover:text-gray-300">Features</a>
-            <a href="#" class="font-medium hover:text-gray-300">Marketplace</a>
-            <a href="#" class="font-medium hover:text-gray-300">Company</a>
-            <a href="#" class="font-medium text-white hover:text-gray-1000 bg-green-500 hover:bg-green-800 rounded-md p-2">Try it</a>
+            <a href="#" class="font-medium hover:text-gray-300">Docs</a>
+            <a href="https://github.com/merc1er/bchtipbot" target="_blank" class="font-medium hover:text-gray-300">GitHub {% include "icons/link.svg" %}</a>
+            <a href="https://t.me/BCHtipbot" target="_blank" class="font-medium text-white hover:text-gray-1000 bg-green-500 hover:bg-green-700 rounded-md p-2">Try it {% include "icons/link.svg" %}</a>
           </div>
         </nav>
       </div>
       <!-- /Navbar -->
 
-      <section class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28 grid">
-        <h1 class="text-5xl place-self-center">
-          <img class="h-14 md:h-24" src="/static/img/logo.png" alt="Logo">
-        </h1>
-      </section>
+      <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+        <div class="md:float-left">
+          <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
+            <span class="block lg:inline">Bitcoin Cash</span>
+            <span class="block text-green-500 lg:inline">tipping bot</span>
+          </h1>
+          <p class="mt-3 text-base text-gray-200 sm:mt-5 sm:text-lg sm:max-w-xl md:mt-5 md:text-2xl">
+            Send money to anyone on messaging apps.<br>
+            Deposit, tip, withdraw instantly.
+          </p>
+          <div class="mt-5 sm:mt-8 sm:flex">
+            <div class="rounded-md shadow">
+              <a href="#" class="w-full flex items-center justify-center px-4 py-2 text-base font-medium rounded-md text-white hover:text-gray-1000 bg-green-500 hover:bg-green-700 md:py-3 md:text-lg md:px-6">
+                Try it
+              </a>
+            </div>
+            <div class="mt-3 sm:mt-0 sm:ml-3">
+              <a href="#" class="w-full flex items-center justify-center px-4 py-2 text-base font-medium rounded-md text-gray-800 bg-white hover:bg-gray-200 md:py-3 md:text-lg md:px-6">
+                Documentation
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Dot pattern -->
+        <div class="hidden md:inline-block md:float-right mr-5">
+          {% include "icons/dot-pattern.svg" %}
+        </div>
+      </main>
 
     </div>
   </div>
 
+  <!-- JavaScript -->
   <script src="/static/js/scripts.js"></script>
+
 </body>
 </html>
