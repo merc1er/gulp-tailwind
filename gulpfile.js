@@ -131,7 +131,7 @@ gulp.task('watch', function(done){
   // Watch HTML pages
   gulp.watch('src/**/*.html', gulp.series('nunjucks', 'reload'));
   // Watch CSS files
-  gulp.watch('src/css/**/*.css', gulp.series('css-prod'));
+  gulp.watch('src/css/**/*.css', gulp.series('css-prod', 'reload'));
   // Watch JS files
   gulp.watch('src/js/*.js', gulp.series('js', 'reload'));
   done();
