@@ -14,68 +14,70 @@
   <title>Bitcoin Cash tipping bot</title>
 </head>
 
-<body class="bg-gray-800 text-white">
+<body class="bg-gray-800 text-white relative overflow-hidden max-w-7xl mx-auto">
 
-  <div class="relative overflow-hidden">
-    <div class="max-w-7xl mx-auto">
-
-      <!-- Navbar -->
-      <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
-        <nav class="relative flex items-center justify-between sm:h-10" aria-label="Global">
-          <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
-            <div class="flex items-center justify-between w-full md:w-auto">
-              <a href="/">
-                <span class="sr-only">Workflow</span>
-                <img class="h-8 w-auto sm:h-10" src="/static/img/tippie.png" alt="Tippie">
-              </a>
-              <div class="-mr-2 flex items-center md:hidden">
-                <button type="button" class="bg-gray-700 rounded-md p-2 inline-flex items-center justify-center text-white hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" id="main-menu" aria-haspopup="true">
-                  <span class="sr-only">Open main menu</span>
-                  {% include "icons/menu.svg" %}
-                </button>
-              </div>
-            </div>
+  <!-- Navbar -->
+  <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
+    <nav class="relative flex items-center justify-between sm:h-10" aria-label="Global">
+      <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
+        <div class="flex items-center justify-between w-full md:w-auto">
+          <a href="/">
+            <span class="sr-only">Workflow</span>
+            <img class="h-8 w-auto sm:h-10" src="/static/img/tippie.png" alt="Tippie">
+          </a>
+          <div class="-mr-2 flex items-center md:hidden">
+            <button type="button" class="bg-gray-700 rounded-md p-2 inline-flex items-center justify-center text-white hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" id="main-menu" aria-haspopup="true">
+              <span class="sr-only">Open main menu</span>
+              {% include "icons/menu.svg" %}
+            </button>
           </div>
-          <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
-            <a href="#" class="font-medium hover:text-gray-300">Docs</a>
-            <a href="https://github.com/merc1er/bchtipbot" target="_blank" class="font-medium hover:text-gray-300">GitHub {% include "icons/link.svg" %}</a>
-            <a href="https://t.me/BCHtipbot" target="_blank" class="font-medium text-white hover:text-gray-1000 bg-green-500 hover:bg-green-700 rounded-md p-2">Try it {% include "icons/link.svg" %}</a>
-          </div>
-        </nav>
+        </div>
       </div>
-      <!-- /Navbar -->
-
-      <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8">
-        <div class="md:float-left">
-          <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
-            <span class="block lg:inline">Bitcoin Cash</span>
-            <span class="block text-green-500 lg:inline">tipping bot</span>
-          </h1>
-          <p class="mt-3 text-base text-gray-200 sm:mt-5 sm:text-lg sm:max-w-xl md:mt-5 md:text-2xl">
-            Send money to anyone on messaging apps.<br>
-            Deposit, tip and withdraw instantly.
-          </p>
-          <div class="mt-5 sm:mt-8 sm:flex">
-            <div class="rounded-md shadow">
-              <a href="#" class="w-full flex items-center justify-center px-4 py-2 text-base font-medium rounded-md text-white hover:text-gray-1000 bg-green-500 hover:bg-green-700 md:py-3 md:text-lg md:px-6">
-                Try it
-              </a>
-            </div>
-            <div class="mt-3 sm:mt-0 sm:ml-3">
-              <a href="#" class="w-full flex items-center justify-center px-4 py-2 text-base font-medium rounded-md text-gray-800 bg-white hover:bg-gray-200 md:py-3 md:text-lg md:px-6">
-                Documentation
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Dot pattern -->
-        <div class="hidden md:inline-block md:float-right mr-5">
-          {% include "icons/dot-pattern.svg" %}
-        </div>
-      </main>
-
-    </div>
+      <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
+        <a href="#" class="font-medium hover:text-gray-300">Docs</a>
+        <a href="https://github.com/merc1er/bchtipbot" target="_blank" class="font-medium hover:text-gray-300">GitHub {% include "icons/link.svg" %}</a>
+        <a href="https://t.me/BCHtipbot" target="_blank" class="font-medium text-white hover:text-gray-1000 bg-green-500 hover:bg-green-700 rounded-md p-2">Try it {% include "icons/link.svg" %}</a>
+      </div>
+    </nav>
   </div>
+  <!-- /Navbar -->
+
+  <!-- Hero header -->
+  <section class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8">
+    <div class="md:float-left">
+      <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
+        <span class="block lg:inline">Bitcoin Cash</span>
+        <span class="block text-green-500 lg:inline">tipping bot</span>
+      </h1>
+      <p class="mt-3 text-base text-gray-200 sm:mt-5 sm:text-lg sm:max-w-xl md:mt-5 md:text-2xl">
+        Send money to anyone on messaging apps.<br>
+        Deposit, tip and withdraw instantly.
+      </p>
+      <div class="mt-5 sm:mt-8 sm:flex">
+        <div class="rounded-md shadow">
+          <a href="#" class="w-full flex items-center justify-center px-4 py-2 text-base font-medium rounded-md text-white hover:text-gray-1000 bg-green-500 hover:bg-green-700 md:py-3 md:text-lg md:px-6">
+            Try it
+          </a>
+        </div>
+        <div class="mt-3 sm:mt-0 sm:ml-3">
+          <a href="#" class="w-full flex items-center justify-center px-4 py-2 text-base font-medium rounded-md text-gray-800 bg-white hover:bg-gray-200 md:py-3 md:text-lg md:px-6">
+            Documentation
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Dot pattern -->
+    <div class="hidden md:inline-block md:float-right mr-5">
+      {% include "icons/dot-pattern.svg" %}
+    </div>
+  </section>
+  <!-- /Hero header -->
+
+  <!--  -->
+  <section class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 bg-gray-200">
+    
+  </section>
+  <!--  -->
 
   <!-- JavaScript -->
   <script src="/static/js/scripts.js"></script>
