@@ -26,7 +26,7 @@
             <img class="h-8 w-auto sm:h-10" src="/static/img/tippie.png" alt="Tippie">
           </a>
           <div class="-mr-2 flex items-center md:hidden">
-            <button type="button" class="bg-gray-700 rounded-md p-2 inline-flex items-center justify-center text-white hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" id="main-menu" aria-haspopup="true">
+            <button type="button" class="bg-gray-700 rounded-md p-2 inline-flex items-center justify-center text-white hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-inset" aria-haspopup="true" id="openMenu">
               <span class="sr-only">Open main menu</span>
               {% include "icons/menu.svg" %}
             </button>
@@ -36,7 +36,7 @@
       <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
         <a href="https://github.com/merc1er/bchtipbot#readme" target="_blank" class="font-medium hover:text-gray-300">Docs {% include "icons/link.svg" %}</a>
         <a href="https://github.com/merc1er/bchtipbot" target="_blank" class="font-medium hover:text-gray-300">GitHub {% include "icons/link.svg" %}</a>
-        <a href="https://t.me/BCHtipbot" target="_blank" class="font-medium text-white hover:text-gray-1000 bg-green-500 hover:bg-green-700 rounded-md p-2">Try it {% include "icons/link.svg" %}</a>
+        <a href="https://t.me/BCHtipbot" target="_blank" class="font-medium text-white bg-green-500 hover:bg-green-700 rounded-md p-2">Try it {% include "icons/link.svg" %}</a>
       </div>
     </nav>
   </div>
@@ -73,7 +73,7 @@
   </section>
   <!-- /Hero header -->
 
-  <!--  -->
+  <!-- Features -->
   <section class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 lg:px-8">
     <div class="py-12 bg-gray-900 rounded-md">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -159,9 +159,11 @@
       </div>
     </div>
   </section>
-  <!--  -->
+  <!-- /Features -->
 
   <footer class="mt-10"></footer>
+
+  {% include "menu.njk" %}
 
   <!-- JavaScript -->
   <script src="/static/js/scripts.js"></script>
