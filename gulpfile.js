@@ -70,7 +70,7 @@ gulp.task('css-prod', function() {
     ]))
     // purgecss
     .pipe(purgecss({
-      content: ['src/**/*.html'],
+      content: ['src/**/*.html', 'src/**/*.njk', 'src/**/*.svg'],
       extractors: [{
         extractor: TailwindExtractor,
         extensions: ['html']
