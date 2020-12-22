@@ -82,8 +82,13 @@ gulp.task('css-prod', function() {
 
 // Use the complete tailwind.min.css file for development only
 gulp.task('css-dev', function() {
-  return gulp.src('node_modules/tailwindcss/dist/tailwind.min.css')
-    .pipe(rename('style.css'))
+  return gulp.src('src/css/style.css')
+    // postcss
+    .pipe(postcss([
+      tailwindcss,
+      autoprefixer
+    ]))
+    // output files in dist folder
     .pipe(gulp.dest('dist/static/css/'));
 });
 
