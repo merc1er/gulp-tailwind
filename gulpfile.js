@@ -10,6 +10,7 @@ const gulp         = require('gulp'),
       postcss      = require('gulp-postcss'),
       tailwindcss  = require('tailwindcss'),
       autoprefixer = require('autoprefixer'),
+      cleanCSS     = require('gulp-clean-css'),
       // JavaScript
       concat       = require('gulp-concat'),
       terser       = require('gulp-terser'),
@@ -76,6 +77,8 @@ gulp.task('css-prod', function() {
         extensions: ['html']
       }]
     }))
+    // Minifies CSS
+    .pipe(cleanCSS({compatibility: 'ie9'}))
     // output files in dist folder
     .pipe(gulp.dest('dist/static/css/'));
 });
