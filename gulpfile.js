@@ -74,7 +74,7 @@ gulp.task('css-prod', function() {
       content: ['src/**/*.html', 'src/**/*.njk', 'src/**/*.svg'],
       extractors: [{
         extractor: TailwindExtractor,
-        extensions: ['html']
+        extensions: ['html', 'njk', 'svg']
       }]
     }))
     // Minifies CSS
