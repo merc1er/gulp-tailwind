@@ -88,8 +88,7 @@ gulp.task('css-dev', function() {
   return gulp.src('src/css/style.css')
     // postcss
     .pipe(postcss([
-      tailwindcss,
-      autoprefixer
+      tailwindcss
     ]))
     // output files in dist folder
     .pipe(gulp.dest('dist/static/css/'));
@@ -139,7 +138,7 @@ gulp.task('watch', function(done){
   // Watch HTML pages
   gulp.watch('src/**/*', gulp.series('nunjucks', 'reload'));
   // Watch CSS files
-  gulp.watch('src/css/**/*.css', gulp.series('css-prod'));
+  gulp.watch('src/css/**/*.css', gulp.series('css-dev'));
   // Watch JS files
   gulp.watch('src/js/*.js', gulp.series('js', 'reload'));
   // Watch static files
