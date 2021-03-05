@@ -5,6 +5,7 @@ const gulp         = require('gulp'),
       rename       = require('gulp-rename'),
       // Templating
       nunjucks     = require('gulp-nunjucks-render'),
+      htmlmin      = require('gulp-htmlmin'),
       // CSS processing
       purgecss     = require('gulp-purgecss'),
       postcss      = require('gulp-postcss'),
@@ -46,6 +47,10 @@ gulp.task('nunjucks', function() {
   // Render template with nunjucks
   .pipe(nunjucks({
     path: ['src/templates/']
+  }))
+  .pipe(htmlmin({ // minify HTML
+    collapseWhitespace: true,
+    removeComments: true
   }))
   // Output files in dist folder
   .pipe(gulp.dest('dist'))
