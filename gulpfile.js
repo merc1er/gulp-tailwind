@@ -13,8 +13,8 @@ const gulp         = require('gulp'),
       autoprefixer = require('autoprefixer'),
       cleanCSS     = require('gulp-clean-css'),
       // JavaScript
-      concat       = require('gulp-concat'),
       terser       = require('gulp-terser'),
+      ts           = require('gulp-typescript'),
       // BrowserSync
       browserSync  = require('browser-sync'),
       reload       = browserSync.reload;
@@ -104,9 +104,12 @@ gulp.task('css-dev', function() {
 
 // Concat and minify JavaScript
 gulp.task('js', function() {
-  const files = ['src/js/*.js'];
+  const files = ['src/ts/*.ts'];
   return gulp.src(files)
-    .pipe(concat('scripts.js'))
+    .pipe(ts({
+      allowJs: true,
+      outFile: 'scripts.js'
+    }))
     // Minify JS
     .pipe(terser())
     .pipe(gulp.dest('dist/static/js/'));
@@ -141,11 +144,11 @@ gulp.task('serve', function(done){
 
 gulp.task('watch', function(done){
   // Watch HTML pages
-  gulp.watch('src/**/*', gulp.series('nunjucks', 'reload'));
+  gulp.watch('src/**/*',          gulp.series('nunjucks', 'reload'));
   // Watch CSS files
-  gulp.watch('src/css/**/*.css', gulp.series('css-dev'));
+  gulp.watch('src/css/**/*.css',  gulp.series('css-dev'));
   // Watch JS files
-  gulp.watch('src/js/*.js', gulp.series('js', 'reload'));
+  gulp.watch('src/ts/**/*',       gulp.series('js', 'reload'));
   // Watch static files
   gulp.watch('src/static/**/*.*', gulp.series('copy-static', 'reload'));
   done();
