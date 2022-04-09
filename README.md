@@ -18,7 +18,7 @@ You will need [nodeJS](https://nodejs.org/en/) installed on your machine, then r
 
 ```shell
 npm install
-npx gulp
+npm start
 ```
 
 ---
@@ -44,5 +44,5 @@ Hit `ctrl + C` to stop the server.
 
 ### 🚀 Deploy
 
-Run `npx gulp build`. The `/dist/` folder contains the production website.
+Run `npm run build`. The `/dist/` folder contains the production website.
 
