@@ -13,8 +13,7 @@ const gulp         = require('gulp'),
       autoprefixer = require('autoprefixer'),
       cleanCSS     = require('gulp-clean-css'),
       // JavaScript
-      terser       = require('gulp-terser'),
-      ts           = require('gulp-typescript'),
+      webpack      = require('webpack-stream'),
       // BrowserSync
       browserSync  = require('browser-sync'),
       reload       = browserSync.reload;
@@ -102,18 +101,12 @@ gulp.task('css-dev', function() {
 
 // JavaScript
 
-// Concat and minify JavaScript
-gulp.task('js', function() {
-  const files = ['src/ts/*.ts'];
-  return gulp.src(files)
-    .pipe(ts({
-      allowJs: true,
-      outFile: 'scripts.js'
-    }))
-    // Minify JS
-    .pipe(terser())
-    .pipe(gulp.dest('dist/static/js/'));
-});
+// Bundle and minify JavaScript
+gulp.task('js', () =>
+  gulp.src('src/js/app.js')
+    .pipe(webpack({mode: 'production'}))
+    .pipe(gulp.dest('dist/static/js/'))
+);
 
 
 // Copy all static files
@@ -148,7 +141,7 @@ gulp.task('watch', function(done){
   // Watch CSS files
   gulp.watch('src/css/**/*.css',  gulp.series('css-dev'));
   // Watch JS files
-  gulp.watch('src/ts/**/*',       gulp.series('js', 'reload'));
+  gulp.watch('src/js/**/*',       gulp.series('js', 'reload'));
   // Watch static files
   gulp.watch('src/static/**/*.*', gulp.series('copy-static', 'reload'));
   done();

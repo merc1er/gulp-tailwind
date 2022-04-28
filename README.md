@@ -1,5 +1,5 @@
 <div align="center">
-  <h3>Gulp + Tailwind project skeleton</h3>
+  <h3>Gulp + Tailwind + AlpineJS project skeleton</h3>
 </div>
 
 ---
@@ -35,7 +35,7 @@ Use the coding style recommended by [codeguide.co](https://codeguide.co).
 
 - CSS files are located in `/src/css/`.
 
-- TypeScript files are located in `/src/ts/`. The files are concatenated in alphabetical order unless specified otherwise.
+- JavaScript files are located in `/src/js/`. The files are bundled by webpack. Entry point is `app.js`.
 
 
 Hit `ctrl + C` to stop the server.
